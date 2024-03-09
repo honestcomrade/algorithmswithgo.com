@@ -6,9 +6,16 @@ package module01
 //
 // Eg:
 //
-//   DecToBase(14, 16) => "E"
-//   DecToBase(14, 2) => "1110"
-//
+//	DecToBase(14, 16) => "E"
+//	DecToBase(14, 2) => "1110"
 func DecToBase(dec, base int) string {
-	return ""
+	var charset = "0123456789ABCDEF"
+	var res string
+	for dec > 0 {
+		rem := dec % base
+		res = string(charset[rem]) + res
+		dec /= base
+	}
+
+	return res
 }
