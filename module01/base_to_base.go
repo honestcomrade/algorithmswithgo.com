@@ -8,7 +8,8 @@ package module01
 //
 //	BaseToBase("E", 16, 2) => "1110"
 func BaseToBase(value string, base, newBase int) string {
-	return ""
+	dec := BaseToDec(value, base)
+	return DecToBase(dec, newBase)
 	/* 14 to base 2:
 
 	Step 1: 14 % 2 = 0, so next digit is "0".
@@ -35,8 +36,4 @@ func BaseToBase(value string, base, newBase int) string {
 
 	Final number is "1110", which is 14 in base 2! */
 	// return strings.Join(s, "")
-}
-
-func Modulo(x int, z int) int {
-	return x % z
 }
